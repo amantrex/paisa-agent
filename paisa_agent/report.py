@@ -3,41 +3,45 @@ import pandas as pd
 from datetime import date
 
 
+def _ensure_report_dir(report_dir: Path | str) -> Path:
+    """Create directory if it does not exist and return the Path.
+    Consolidates repeated mkdir calls across report functions.
+    """
+    path = Path(report_dir)
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
 def write_transaction_log(transactions: pd.DataFrame, report_dir: Path | str) -> Path:
-    report_path = Path(report_dir)
-    report_path.mkdir(parents=True, exist_ok=True)
+    report_path = _ensure_report_dir(report_dir)
     file_path = report_path / f"transactions_{date.today().isoformat()}.csv"
     transactions.to_csv(file_path, index=False)
     return file_path
 
 
 def write_trade_log(trades: pd.DataFrame, report_dir: Path | str) -> Path:
-    report_path = Path(report_dir)
-    report_path.mkdir(parents=True, exist_ok=True)
+    report_path = _ensure_report_dir(report_dir)
     file_path = report_path / f"backtest_trades_{date.today().isoformat()}.csv"
     trades.to_csv(file_path, index=False)
     return file_path
 
 
 def write_portfolio_log(portfolio: pd.DataFrame, report_dir: Path | str) -> Path:
-    report_path = Path(report_dir)
-    report_path.mkdir(parents=True, exist_ok=True)
+    report_path = _ensure_report_dir(report_dir)
     file_path = report_path / f"backtest_portfolio_{date.today().isoformat()}.csv"
     portfolio.to_csv(file_path, index=False)
     return file_path
 
 
 def write_performance_summary(metrics: dict, report_dir: Path | str) -> Path:
-    report_path = Path(report_dir)
-    report_path.mkdir(parents=True, exist_ok=True)
+    report_path = _ensure_report_dir(report_dir)
     file_path = report_path / f"backtest_summary_{date.today().isoformat()}.csv"
     pd.DataFrame([metrics]).to_csv(file_path, index=False)
     return file_path
 
 
 def write_eod_report(portfolio: list, summary: pd.DataFrame, report_dir: Path | str) -> Path:
-    report_path = Path(report_dir)
-    report_path.mkdir(parents=True, exist_ok=True)
+    report_path = _ensure_report_dir(report_dir)
     rows = []
     for pos in portfolio:
         rows.append({

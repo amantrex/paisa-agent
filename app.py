@@ -1,3 +1,4 @@
+import streamlit as st
 from pathlib import Path
 from datetime import date
 import pandas as pd
@@ -6,7 +7,7 @@ from paisa_agent.data import load_tickers, fetch_bulk
 from paisa_agent.strategy import score_stock
 from paisa_agent.report import write_transaction_log, write_eod_report
 
-
+@st.cache_data(ttl=3600)
 def discover_candidates(settings: Settings) -> pd.DataFrame:
     tickers = load_tickers(settings.tickers_file)
     prices = fetch_bulk(tickers, settings.start_date, settings.end_date, cache_dir=settings.data_dir / "cache")
@@ -34,8 +35,8 @@ def build_daily_recommendations(candidates: pd.DataFrame, settings: Settings) ->
         return candidates
     recommended = candidates.head(settings.max_daily_positions).copy()
     recommended["action"] = "buy"
-    recommended["invest_amount"] = recommended["price"].apply(lambda price: min(settings.daily_budget, price * int(settings.daily_budget // price)))
-    recommended["shares"] = (recommended["invest_amount"] / recommended["price"]).astype(int)
+    recommended["invested"] = recommended["price"].apply(lambda price: min(settings.daily_budget, price * int(settings.daily_budget // price)))
+    recommended["shares"] = (recommended["invested"] / recommended["price"]).astype(int)
     recommended = recommended[recommended["shares"] >= 1]
     return recommended
 

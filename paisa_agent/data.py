@@ -137,7 +137,7 @@ def fetch_bulk(tickers: List[str], start: str, end: str, cache_dir: Path | str =
         # Check cache validity: use cached data only if less than 1 day old
         if file_path.exists():
             cache_age_seconds = (datetime.now() - datetime.fromtimestamp(file_path.stat().st_mtime)).total_seconds()
-            if cache_age_seconds < 86400:  # 24 hours
+            if cache_age_seconds < 604800:  # 7 days
                 try:
                     df = pd.read_csv(file_path, index_col=0, parse_dates=True)
                     if not df.empty and len(df) > 0:
