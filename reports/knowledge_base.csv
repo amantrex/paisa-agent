@@ -1,0 +1,63 @@
+date,ticker,action,price,shares,invested,cash,reason,projected_sell_date,proceeds,profit,hold_days
+2022-03-15,UCOBANK.NS,buy,11.443392753601074,8,91.5471420288086,9908.452857971191,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2022-09-11,,,
+2022-03-21,YESBANK.NS,buy,12.949999809265137,7,90.64999866485596,9817.802859306335,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2022-09-17,,,
+2022-04-07,YESBANK.NS,sell,15.550000190734863,7,,9926.65286064148,take profit,,108.85000133514404,18.200002670288086,17.0
+2022-04-07,YESBANK.NS,buy,15.550000190734863,6,93.30000114440918,9833.35285949707,weak short-term trend; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2022-10-04,,,
+2022-04-18,YESBANK.NS,sell,14.100000381469728,6,,9917.952861785889,stop loss,,84.60000228881837,-8.699998855590806,11.0
+2022-04-18,YESBANK.NS,buy,14.100000381469728,7,98.7000026702881,9819.2528591156,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; reasonable PE; minimum market cap met,2022-10-15,,,
+2022-04-20,UCOBANK.NS,sell,11.636530876159668,8,,9912.345106124878,score deterioration,,93.09224700927734,1.54510498046875,36.0
+2022-05-09,YESBANK.NS,sell,12.949999809265137,7,,10002.995104789734,stop loss,,90.64999866485596,-8.050004005432143,21.0
+2022-05-09,YESBANK.NS,buy,12.949999809265137,7,90.64999866485596,9912.345106124878,"short-term trend positive; oversold, watch for reversal; below 20-day average; below 50-day average; MACD weak; reasonable PE; minimum market cap met",2022-11-05,,,
+2022-05-17,UCOBANK.NS,buy,11.250255584716797,8,90.00204467773438,9822.343061447144,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2022-11-13,,,
+2022-06-17,UCOBANK.NS,sell,10.284567832946776,8,,9904.619604110718,stop loss,,82.2765426635742,-7.7255020141601705,31.0
+2022-06-22,YESBANK.NS,sell,12.449999809265137,7,,9991.769602775574,score deterioration,,87.14999866485596,-3.5,44.0
+2022-06-27,UCOBANK.NS,buy,10.719127655029297,9,96.47214889526367,9895.29745388031,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2022-12-24,,,
+2022-06-27,YESBANK.NS,buy,12.850000381469728,7,89.9500026702881,9805.347451210022,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2022-12-24,,,
+2022-07-29,YESBANK.NS,sell,14.949999809265137,7,,9909.997449874878,take profit,,104.64999866485596,14.699995994567857,32.0
+2022-07-29,YESBANK.NS,buy,14.949999809265137,6,89.69999885559082,9820.297451019287,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2023-01-25,,,
+2022-09-08,YESBANK.NS,sell,17.75,6,,9926.797451019287,take profit,,106.5,16.80000114440918,41.0
+2022-09-08,YESBANK.NS,buy,17.75,5,88.75,9838.047451019287,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2023-03-07,,,
+2022-09-23,YESBANK.NS,sell,16.200000762939453,5,,9919.047454833984,stop loss,,81.00000381469727,-7.749996185302734,15.0
+2022-09-23,YESBANK.NS,buy,16.200000762939453,6,97.20000457763672,9821.847450256348,short-term trend positive; momentum is healthy; below 20-day average; above 50-day average; MACD weak; reasonable PE; minimum market cap met,2023-03-22,,,
+2022-10-25,UCOBANK.NS,sell,12.55393409729004,9,,9934.832857131958,take profit,,112.98540687561037,16.513257980346694,120.0
+2022-10-25,UCOBANK.NS,buy,12.55393409729004,7,87.87753868103029,9846.955318450928,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2023-04-23,,,
+2022-11-07,UCOBANK.NS,sell,14.630160331726074,7,,9949.36644077301,take profit,,102.41112232208252,14.533583641052232,13.0
+2022-11-07,UCOBANK.NS,buy,14.630160331726074,6,87.78096199035645,9861.585478782654,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2023-05-06,,,
+2022-11-21,UCOBANK.NS,sell,18.010066986083984,6,,9969.645880699158,take profit,,108.0604019165039,20.27943992614746,14.0
+2022-11-21,UCOBANK.NS,buy,18.010066986083984,5,90.05033493041992,9879.595545768738,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2023-05-20,,,
+2022-12-07,UCOBANK.NS,sell,21.48653984069824,5,,9987.028244972229,take profit,,107.4326992034912,17.382364273071275,16.0
+2022-12-09,YESBANK.NS,sell,19.700000762939453,6,,10105.228249549866,take profit,,118.20000457763672,21.0,77.0
+2022-12-09,YESBANK.NS,buy,19.700000762939453,5,98.50000381469727,10006.728245735168,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; reasonable PE; minimum market cap met,2023-06-07,,,
+2022-12-13,YESBANK.NS,sell,23.950000762939453,5,,10126.478249549866,take profit,,119.75000381469727,21.25,4.0
+2022-12-21,YESBANK.NS,buy,19.850000381469727,5,99.25000190734863,10027.228247642517,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2023-06-19,,,
+2022-12-23,YESBANK.NS,sell,17.450000762939453,5,,10114.478251457214,stop loss,,87.25000381469727,-11.999998092651367,2.0
+2022-12-23,YESBANK.NS,buy,17.450000762939453,5,87.25000381469727,10027.228247642517,short-term trend positive; momentum is healthy; below 20-day average; below 50-day average; MACD weak; reasonable PE; minimum market cap met,2023-06-21,,,
+2022-12-30,YESBANK.NS,sell,20.600000381469727,5,,10130.228249549866,take profit,,103.00000190734863,15.749998092651367,7.0
+2023-01-12,YESBANK.NS,buy,19.899999618530277,5,99.49999809265138,10030.728251457214,short-term trend positive; RSI elevated; below 20-day average; above 50-day average; MACD weak; reasonable PE; minimum market cap met,2023-07-11,,,
+2023-01-23,YESBANK.NS,sell,18.149999618530277,5,,10121.478249549866,stop loss,,90.74999809265138,-8.75,11.0
+2023-01-23,YESBANK.NS,buy,18.149999618530277,5,90.74999809265138,10030.728251457214,"short-term trend positive; oversold, watch for reversal; below 20-day average; below 50-day average; MACD weak; volume has picked up; reasonable PE; minimum market cap met",2023-07-22,,,
+2023-02-03,YESBANK.NS,sell,16.450000762939453,5,,10112.978255271912,stop loss,,82.25000381469727,-8.499994277954116,11.0
+2023-02-20,YESBANK.NS,buy,16.600000381469727,6,99.60000228881836,10013.378252983093,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2023-08-19,,,
+2023-03-16,YESBANK.NS,sell,14.899999618530272,6,,10102.778250694275,stop loss,,89.39999771118163,-10.200004577636733,24.0
+2023-04-03,YESBANK.NS,buy,15.350000381469728,6,92.10000228881837,10010.678248405457,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2023-09-30,,,
+2023-05-23,YESBANK.NS,sell,15.550000190734863,6,,10103.978249549866,score deterioration,,93.30000114440918,1.199998855590806,50.0
+2023-05-29,YESBANK.NS,buy,15.899999618530272,6,95.39999771118163,10008.578251838684,weak short-term trend; momentum is healthy; price above 20-day average; above 50-day average; MACD weak; volume has picked up; reasonable PE; minimum market cap met,2023-11-25,,,
+2023-09-04,YESBANK.NS,sell,18.600000381469727,6,,10120.178254127502,take profit,,111.60000228881836,16.200004577636733,98.0
+2023-09-04,YESBANK.NS,buy,18.600000381469727,5,93.00000190734863,10027.178252220154,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2024-03-02,,,
+2023-10-09,YESBANK.NS,sell,16.899999618530273,5,,10111.678250312805,stop loss,,84.49999809265137,-8.500003814697266,35.0
+2023-10-09,YESBANK.NS,buy,16.899999618530273,5,84.49999809265137,10027.178252220154,"short-term trend positive; oversold, watch for reversal; below 20-day average; below 50-day average; MACD weak; reasonable PE; minimum market cap met",2024-04-06,,,
+2023-11-15,YESBANK.NS,sell,20.350000381469727,5,,10128.928254127502,take profit,,101.75000190734863,17.250003814697266,37.0
+2023-11-21,YESBANK.NS,buy,19.700000762939453,5,98.50000381469727,10030.428250312805,short-term trend positive; RSI elevated; price above 20-day average; above 50-day average; MACD bullish; reasonable PE; minimum market cap met,2024-05-19,,,
+2023-12-21,YESBANK.NS,sell,21.149999618530277,5,,10136.178248405457,score deterioration,,105.74999809265138,7.249994277954116,30.0
+2024-11-11,YESBANK.NS,buy,19.88999938964844,5,99.4499969482422,10036.728251457214,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2025-05-10,,,
+2024-12-11,YESBANK.NS,sell,21.57999992370605,5,,10144.628251075745,score deterioration,,107.89999961853026,8.450002670288058,30.0
+2025-01-20,YESBANK.NS,buy,18.93000030517578,5,94.6500015258789,10049.978249549866,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2025-07-19,,,
+2025-02-25,YESBANK.NS,sell,17.790000915527344,5,,10138.928254127502,score deterioration,,88.95000457763672,-5.6999969482421875,36.0
+2025-03-19,YESBANK.NS,buy,17.030000686645508,5,85.15000343322754,10053.778250694275,weak short-term trend; momentum is healthy; price above 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2025-09-15,,,
+2025-05-09,YESBANK.NS,sell,20.020000457763672,5,,10153.878252983093,take profit,,100.10000228881836,14.94999885559082,51.0
+2025-06-17,YESBANK.NS,buy,19.940000534057617,5,99.70000267028809,10054.178250312805,short-term trend positive; momentum is healthy; below 20-day average; above 50-day average; MACD weak; volume has picked up; reasonable PE; minimum market cap met,2025-12-14,,,
+2025-07-17,YESBANK.NS,sell,20.13999938964844,5,,10154.878247261047,score deterioration,,100.6999969482422,0.9999942779541158,30.0
+2025-07-22,YESBANK.NS,buy,19.989999771118164,5,99.94999885559082,10054.928248405457,short-term trend positive; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; reasonable PE; minimum market cap met,2026-01-18,,,
+2025-09-03,YESBANK.NS,sell,20.350000381469727,5,,10156.678250312805,score deterioration,,101.75000190734863,1.8000030517578125,43.0
+2026-04-06,YESBANK.NS,buy,18.149999618530277,5,90.74999809265138,10065.928252220154,weak short-term trend; momentum is healthy; below 20-day average; below 50-day average; MACD bullish; volume has picked up; reasonable PE; minimum market cap met,2026-10-03,,,
+2026-05-06,YESBANK.NS,sell,22.1299991607666,5,,10176.578248023987,take profit,,110.64999580383301,19.899997711181626,30.0
