@@ -12,7 +12,8 @@ def add_technical_indicators(df: pd.DataFrame) -> pd.DataFrame:
     loss = -delta.clip(upper=0)
     avg_gain = gain.rolling(14, min_periods=7).mean()
     avg_loss = loss.rolling(14, min_periods=7).mean()
-    rs = avg_gain / avg_loss
+    # Avoid division by zero when loss is 0
+    rs = avg_gain / avg_loss.replace(0, 1)
     df["RSI"] = 100 - (100 / (1 + rs))
     high_low = df["High"] - df["Low"]
     high_close = (df["High"] - df["Close"].shift()).abs()

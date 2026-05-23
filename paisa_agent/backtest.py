@@ -4,6 +4,7 @@ from typing import Dict, List, Optional
 import pandas as pd
 from .config import Settings
 from .strategy import score_stock
+from .indicators import add_technical_indicators
 
 
 @dataclass
@@ -27,9 +28,17 @@ class BacktestEngine:
 
     def run(self, prices: Dict[str, pd.DataFrame], fundamentals: Optional[Dict[str, dict]] = None) -> tuple[pd.DataFrame, pd.DataFrame]:
         fundamentals = fundamentals or {}
+        
+        # Pre-calculate technical indicators for all tickers once (optimization)
+        prices_with_indicators = {}
+        for ticker, df in prices.items():
+            prices_with_indicators[ticker] = add_technical_indicators(df)
+        
         trading_dates = sorted({date for df in prices.values() for date in df.index})
         for current_date in trading_dates:
-            daily_prices = {ticker: df.loc[:current_date] for ticker, df in prices.items() if current_date in df.index}
+            daily_prices = {ticker: prices_with_indicators[ticker].loc[:current_date] 
+                           for ticker, df in prices_with_indicators.items() 
+                           if current_date in df.index}
             if not daily_prices:
                 continue
             self._process_sells(current_date, daily_prices, fundamentals)
@@ -38,7 +47,8 @@ class BacktestEngine:
             self._record_portfolio(current_date, daily_prices)
         history_df = pd.DataFrame(self.trade_history)
         portfolio_df = pd.DataFrame(self.portfolio_history)
-        return history_df, portfolio_df
+        retu# DataFrame already has pre-calculated indicators, no need to recalculate
+            rn history_df, portfolio_df
 
     def _rank_buy_candidates(self, current_date: pd.Timestamp, daily_prices: Dict[str, pd.DataFrame], fundamentals: Dict[str, dict]) -> List[dict]:
         candidates = []

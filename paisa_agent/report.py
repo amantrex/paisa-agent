@@ -45,7 +45,7 @@ def write_eod_report(portfolio: list, summary: pd.DataFrame, report_dir: Path | 
             "buy_date": pos.buy_date.date().isoformat(),
             "buy_price": pos.buy_price,
             "shares": pos.shares,
-            "invested": pos.invest_amount,
+            "invested": pos.invested,
             "projected_sell_date": pos.projected_sell_date.date().isoformat(),
             "reason": pos.reason,
         })

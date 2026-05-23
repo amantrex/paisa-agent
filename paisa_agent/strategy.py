@@ -7,7 +7,12 @@ from .config import Settings
 def score_stock(df: pd.DataFrame, settings: Settings, fundamentals: Optional[dict] = None) -> dict:
     if df.empty or len(df) < 50:
         return {"score": 0.0, "reason": "insufficient price history", "projected_window": None}
-    df = add_technical_indicators(df)
+    
+    # Only add indicators if they don't already exist (optimization for backtest)
+    required_indicators = ["SMA20", "SMA50", "EMA20", "EMA50", "RSI", "MACD", "MACD_signal", "VolumeChange"]
+    if not all(indicator in df.columns for indicator in required_indicators):
+        df = add_technical_indicators(df)
+    
     latest = df.iloc[-1]
     price = latest["Close"]
     if price > settings.price_ceiling:

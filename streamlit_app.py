@@ -2,31 +2,8 @@ from pathlib import Path
 import streamlit as st
 import pandas as pd
 from paisa_agent.config import Settings
-from paisa_agent.data import load_tickers, fetch_bulk
-from paisa_agent.strategy import score_stock
 from app import discover_candidates, build_daily_recommendations
 from historical_backtest import run_historical_backtest
-
-
-def load_recommendations(settings: Settings) -> pd.DataFrame:
-    tickers = load_tickers(settings.tickers_file)
-    prices = fetch_bulk(tickers, settings.start_date, settings.end_date, cache_dir=settings.data_dir / "cache")
-    rows = []
-    for ticker, df in prices.items():
-        score = score_stock(df, settings)
-        if score["score"] <= 0:
-            continue
-        rows.append({
-            "ticker": ticker,
-            "score": score["score"],
-            "reason": score["reason"],
-            "projected_window": score["projected_window"],
-            "price": float(df["Close"].iloc[-1]),
-            "last_date": df.index[-1].date().isoformat(),
-        })
-    if not rows:
-        return pd.DataFrame()
-    return pd.DataFrame(rows).sort_values(by="score", ascending=False)
 
 
 def main():
@@ -37,7 +14,7 @@ def main():
     st.write("This dashboard fetches recent historical data for a penny stock universe and ranks candidates by a simple score.")
 
     if st.button("Refresh Recommendations"):
-        recommendations = load_recommendations(settings)
+        recommendations = discover_candidates(settings)
         if recommendations.empty:
             st.warning("No buy candidates found in the current universe.")
         else:

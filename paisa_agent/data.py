@@ -110,26 +110,55 @@ def fetch_historical(ticker: str, start: str, end: str) -> pd.DataFrame:
         return pd.DataFrame()
 
     df.index = pd.to_datetime(df.index)
+    
+    # Validate data integrity
+    if len(df) == 0:
+        print(f"Warning: {ticker} has no valid data after filtering")
+        return pd.DataFrame()
+    if (df < 0).any().any():
+        print(f"Warning: {ticker} has negative values, removing invalid rows")
+        df = df[(df > 0).all(axis=1)]
+    if df.empty:
+        return pd.DataFrame()
+    
     return df
 
 
 def fetch_bulk(tickers: List[str], start: str, end: str, cache_dir: Path | str = "data/cache") -> dict:
+    from datetime import datetime
     cache_path = Path(cache_dir)
     cache_path.mkdir(parents=True, exist_ok=True)
     results = {}
     skipped = []
     for ticker in tickers:
         file_path = cache_path / f"{ticker.replace('.', '_')}.csv"
+        df = pd.DataFrame()
+        
+        # Check cache validity: use cached data only if less than 1 day old
         if file_path.exists():
-            df = pd.read_csv(file_path, index_col=0, parse_dates=True)
-        else:
-            df = fetch_historical(ticker, start, end)
-            if not df.empty:
+            cache_age_seconds = (datetime.now() - datetime.fromtimestamp(file_path.stat().st_mtime)).total_seconds()
+            if cache_age_seconds < 86400:  # 24 hours
+                try:
+                    df = pd.read_csv(file_path, index_col=0, parse_dates=True)
+                    if not df.empty and len(df) > 0:
+                        results[ticker] = df
+                        continue
+                except Exception as e:
+                    print(f"Warning: Failed to read cache for {ticker}: {e}")
+        
+        # Fetch fresh data if cache miss or cache too old
+        df = fetch_historical(ticker, start, end)
+        if not df.empty:
+            try:
                 df.to_csv(file_path)
-        if df.empty:
+                results[ticker] = df
+            except Exception as e:
+                print(f"Warning: Failed to cache {ticker}: {e}")
+                # Still add to results even if cache write fails
+                results[ticker] = df
+        else:
             skipped.append(ticker)
-            continue
-        results[ticker] = df
+    
     if skipped:
         print(f"Skipped {len(skipped)} ticker(s) due to missing or invalid historical data: {','.join(skipped)}")
     return results
