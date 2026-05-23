@@ -20,10 +20,10 @@ def allocate_capital(candidates: pd.DataFrame, settings: Settings) -> pd.DataFra
     # Compute allocation per ticker
     allocations = []
     max_position_cash = settings.starting_capital * settings.max_position_pct
-    for idx, row in top.iterrows():
+    for i, (idx, row) in enumerate(top.iterrows()):
         price = row["price"]
         effective_price = price * (1 + settings.slippage_pct) + settings.commission_per_share
-        raw_cash = settings.starting_capital * weights[idx]
+        raw_cash = settings.starting_capital * weights[i]
         cash = min(raw_cash, max_position_cash)
         shares = int(cash // effective_price)
         if shares < 1:

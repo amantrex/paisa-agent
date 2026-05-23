@@ -14,6 +14,7 @@ class Settings:
     commission_per_share: float = 0.25      # ₹ per share
     slippage_pct: float = 0.001             # 0.1 % price slippage
     portfolio_opt_top_n: int = 10           # consider top‑N candidates for allocation
+    starting_capital: float = 10_000.0            # initial cash for simulation
     daily_budget: float = 100.0
     max_hold_days: int = 180
     min_hold_days: int = 30

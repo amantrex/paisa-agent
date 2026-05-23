@@ -1,4 +1,4 @@
-ticker,score,reason,projected_window,price,date,action,invest_amount,shares
-KEEPLEARN.NS,90.0,short-term trend positive; momentum is healthy; price above 20-day average; above 50-day average; MACD bullish,30-180 days,2.0899999141693115,2026-05-22,buy,98.22999596595764,47
-AFIL.NS,85.0,short-term trend positive; momentum is healthy; price above 20-day average; above 50-day average; MACD weak; volume has picked up,30-180 days,9.18000030517578,2026-05-22,buy,91.8000030517578,10
-LIBAS.NS,85.0,short-term trend positive; momentum is healthy; price above 20-day average; above 50-day average; MACD weak; volume has picked up,30-180 days,12.4399995803833,2026-05-22,buy,99.5199966430664,8
+ticker,price,shares,invested,action,score,reason,projected_window
+KEEPLEARN.NS,2.0899999141693115,426,997.7303033995627,buy,90.0,short-term trend positive; momentum is healthy; price above 20-day average; above 50-day average; MACD bullish,30-180 days
+LIBAS.NS,12.4399995803833,5,63.51219789981841,buy,85.0,short-term trend positive; momentum is healthy; price above 20-day average; above 50-day average; MACD weak; volume has picked up,30-180 days
+AFIL.NS,9.18000030517578,7,66.07426213836668,buy,85.0,short-term trend positive; momentum is healthy; price above 20-day average; above 50-day average; MACD weak; volume has picked up,30-180 days
