@@ -2,6 +2,7 @@ from pathlib import Path
 import streamlit as st
 import pandas as pd
 from paisa_agent.config import Settings
+from .ui_config import load_ui_settings, save_ui_settings
 from app import discover_candidates, build_daily_recommendations
 from historical_backtest import run_historical_backtest
 
@@ -10,6 +11,9 @@ def main():
     st.set_page_config(page_title="Paisa Agent", layout="wide")
     st.title("Paisa Agent \u2013 Penny Stock Research & Recommendation")
     settings = Settings()
+ui_settings = load_ui_settings()
+for _key, _value in ui_settings.items():
+    setattr(settings, _key, _value)
     st.write("## Phase 1: Market Research")
     st.write("This dashboard fetches recent historical data for a penny stock universe and ranks candidates by a simple score.")
 

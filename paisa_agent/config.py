@@ -8,7 +8,12 @@ class Settings:
     tickers_file: Path = Path("data/penny_stocks_sample.csv")
     start_date: str = "2022-01-01"
     end_date: str = "2026-05-31"
-    starting_capital: float = 10000.0
+    # ----- NEW GUARD‑RAILS -----
+    max_daily_loss_pct: float = 0.05        # abort day if loss >5 %
+    max_position_pct: float = 0.10          # per‑ticker exposure cap (10 % of cash)
+    commission_per_share: float = 0.25      # ₹ per share
+    slippage_pct: float = 0.001             # 0.1 % price slippage
+    portfolio_opt_top_n: int = 10           # consider top‑N candidates for allocation
     daily_budget: float = 100.0
     max_hold_days: int = 180
     min_hold_days: int = 30

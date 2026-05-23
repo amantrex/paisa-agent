@@ -31,14 +31,20 @@ def discover_candidates(settings: Settings) -> pd.DataFrame:
 
 
 def build_daily_recommendations(candidates: pd.DataFrame, settings: Settings) -> pd.DataFrame:
+    """Allocate cash to top candidates using the portfolio optimizer.
+    Returns a dataframe with ticker, price, shares, invested, and action='buy'.
+    """
     if candidates.empty:
-        return candidates
-    recommended = candidates.head(settings.max_daily_positions).copy()
-    recommended["action"] = "buy"
-    recommended["invested"] = recommended["price"].apply(lambda price: min(settings.daily_budget, price * int(settings.daily_budget // price)))
-    recommended["shares"] = (recommended["invested"] / recommended["price"]).astype(int)
-    recommended = recommended[recommended["shares"] >= 1]
-    return recommended
+        return pd.DataFrame(columns=["ticker", "price", "shares", "invested", "action"])
+    # Use the optimizer to get allocation respecting guard‑rails
+    from .optimizer import allocate_capital
+    allocation_df = allocate_capital(candidates, settings)
+    if allocation_df.empty:
+        return pd.DataFrame(columns=["ticker", "price", "shares", "invested", "action"])
+    allocation_df["action"] = "buy"
+    # Ensure columns order matches downstream expectations
+    return allocation_df[["ticker", "price", "shares", "invested", "action"]]
+
 
 
 def run_paper_trader():
